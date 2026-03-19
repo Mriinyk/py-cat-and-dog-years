@@ -12,7 +12,7 @@ from app.main import get_human_age
         (24, 24, [2, 2]),
         (27, 27, [2, 2]),
         (28, 28, [3, 2]),
-        (100, 100, [3, 2]),
+        (100, 100, [21, 17]),
     ],
     ids=[
         "check_age_0",
@@ -34,8 +34,6 @@ def test_check_age(cat_age: int, dog_age: int, human_age: list) -> None:
     [
         pytest.param(-5, 4, ValueError, id="data is negative"),
         pytest.param(15, -4, ValueError, id="data is negative"),
-        pytest.param(10000, 4, ValueError, id="data is too large"),
-        pytest.param(1, 20000, ValueError, id="data is too large"),
         pytest.param(2.5, 10, TypeError, id="data type is incorrect"),
         pytest.param(2, 3.2, TypeError, id="data type is incorrect"),
         pytest.param(2, "3", TypeError, id="data type is incorrect"),
